@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>دیوار</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!--<ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-totoro.png">
+      </ion-thumbnail>
+      <h2>لیر</h2>
+      <p>1.290 تومان</p>
+      <button ion-button clear item-end>بیشتر</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-totoro.png">
+      </ion-thumbnail>
+      <h2>برج باغ الهیه</h2>
+      <p>قیمت کل:توافقی</p>
+      <button ion-button clear item-end>بیشتر</button>
+    </ion-item>
+  </ion-list>-->
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+        <img src="{{ item.photo }}" >
+      </ion-thumbnail>
+      <h2> {{ item.title }}</h2>
+      <p>{{ item.price }}</p>
+      <button ion-button clear item-end  (click)="doLogin(item)">بیشتر</button>
+    </ion-item>
+  </ion-list>
+
+  <!--<ion-list>
+    <ion-item *ngFor="let item of items">
+      Title: {{ item.title }} - Id: {{ item.id }}
+      <p *ngFor="let subitem of item.items" no-lines>
+        <span>Title: {{ subitem.title }} - Id: {{ subitem.id }}</span>
+      </p>
+    </ion-item>
+  </ion-list>-->
+</ion-content>
