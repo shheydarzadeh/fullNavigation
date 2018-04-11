@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DetailesPage } from '../detailes/detailes';
+
 
 /**
  * Generated class for the DivarPage page.
@@ -21,7 +23,7 @@ export class DivarPage {
   //ionViewDidLoad() {
   //  console.log('ionViewDidLoad DivarPage');
   //}
-  constructor() {
+  constructor(private navCtrl: NavController) {
     this.initializeItems();
   }
   initializeItems() {
@@ -44,5 +46,7 @@ export class DivarPage {
   }
   doLogin(it) {
     alert('Clicked: ' + it.id);
+   // this.navCtrl.push(DetailesPage, it);
+    this.navCtrl.push(DetailesPage);
   }
 }

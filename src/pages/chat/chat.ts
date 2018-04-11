@@ -10,8 +10,9 @@ import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-
 
 @IonicPage()
 @Component({
-  selector: 'page-chat',
-  templateUrl: 'chat.html',
+  selector: 'page-chat',  
+  templateUrl: 'chat.html'
+  
 })
 export class ChatPage {
   
