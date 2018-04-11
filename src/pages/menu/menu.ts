@@ -3,7 +3,6 @@ import { DivarPage } from './../divar/divar';
 import { DastebandihaPage } from './../dastebandiha/dastebandiha';
 import { ChatPage } from './../chat/chat';
 import { TabsPage } from './../tabs/tabs';
-import { DetailesPage } from '../detailes/detailes';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, Nav } from 'ionic-angular';
 

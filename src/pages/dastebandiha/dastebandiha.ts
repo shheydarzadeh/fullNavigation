@@ -18,7 +18,7 @@ export class DastebandihaPage {
 
   //constructor(public navCtrl: NavController, public navParams: NavParams) {
   //}
-  constructor() {
+  constructor(private navCtrl: NavController, public navParams: NavParams) {
     this.initializeItems();
   }
   initializeItems() {

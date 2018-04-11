@@ -17,6 +17,7 @@ export class TabsPage {
   tab1Root: any = 'DivarPage';
   tab2Root: any = 'DastebandihaPage';
   tab3Root: any = 'ChatPage';
+  //tab3Root: any = 'DetailesPage';
   
   
   myIndex: number;

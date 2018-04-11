@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetailesPage } from '../detailes/detailes';
+import { DastebandihaPage } from '../dastebandiha/dastebandiha';
 
 
 /**
@@ -46,7 +47,8 @@ export class DivarPage {
   }
   doLogin(it) {
     alert('Clicked: ' + it.id);
-   // this.navCtrl.push(DetailesPage, it);
-    this.navCtrl.push(DetailesPage);
+    this.navCtrl.push(DetailesPage, it);
+   // this.navCtrl.push(DetailesPage);
+   // this.navCtrl.push(DastebandihaPage, it);
   }
 }

@@ -8,12 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DetailesPage } from '../pages/detailes/detailes';
+
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailesPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailesPage
   ],
   providers: [
     StatusBar,
