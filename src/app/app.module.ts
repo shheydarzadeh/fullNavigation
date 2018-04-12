@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailesPage } from '../pages/detailes/detailes';
+import { SubcatPage } from '../pages/subcat/subcat';
 
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
 
@@ -16,7 +17,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
   declarations: [
     MyApp,
     HomePage,
-    DetailesPage
+    DetailesPage,
+    SubcatPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
   entryComponents: [
     MyApp,
     HomePage,
-    DetailesPage
+    DetailesPage,
+    SubcatPage
   ],
   providers: [
     StatusBar,

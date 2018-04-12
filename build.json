@@ -1,0 +1,11 @@
+{
+     "android": {
+      "release": {
+        "keystore": "C:\\Users\\Admin\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\mykey\\mykey.keystore",
+        "storePassword": "sharar",
+        "alias": "mykey",
+        "password": "sharar",
+        "keystoreType": ""
+      }
+     }
+ }

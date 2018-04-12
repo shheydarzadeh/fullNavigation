@@ -4,10 +4,17 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<style>
+  img {
+    width: 100%;
+   // width: 200px;
+    height: 200px;
+  }
+</style>
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detailes</ion-title>
+    <ion-title>{{user.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,11 +22,11 @@
 
 <ion-content padding>
   <ion-card>
-    <img src="img/thumbnail-totoro.png">
+    <img  src="img/thumbnail-totoro.png" width="200" height="200">
     <ion-card-content>
       <ion-card-title>
         <h1>لیر</h1>
-        <p>Birthday: </p>
+        <p>Birthday:{{user.id}} </p>
       </ion-card-title>
       <ion-list no-lines>
         <ion-item>

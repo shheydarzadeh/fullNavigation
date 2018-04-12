@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { SubcatPage } from '../subcat/subcat';
 /**
  * Generated class for the DastebandihaPage page.
  *
@@ -15,21 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DastebandihaPage {
   items: object[];
-
   //constructor(public navCtrl: NavController, public navParams: NavParams) {
   //}
   constructor(private navCtrl: NavController, public navParams: NavParams) {
     this.initializeItems();
   }
   initializeItems() {
+   
     this.items = [
       {
         id: 1,
         icon_name: 'star',
         title: 'املاک',
         items: [
-          { id: 1, title: 'خرید املاک' },
-          { id: 2, title: 'فروش املاک' }
+          { id: 1, title: 'خرید املاک', items: [{ id: 1, title: 'خرید آپارتمان' }, { id: 2, title: 'خرید ویلا' }] },
+          { id: 2, title: 'فروش املاک', items: [{ id: 1, title: 'فروش آپارتمان' }, { id: 2, title: 'فروش ویلا' }] }
         ]
       },
       {
@@ -52,10 +53,12 @@ export class DastebandihaPage {
       }
     ];
   }
-  nextpage()
+  nextpage(it)
   {
     alert('Clicked: ');
+    this.navCtrl.push(SubcatPage, it);
   }
+  
   //ionViewDidLoad() {
   //  console.log('ionViewDidLoad DastebandihaPage');
   //}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the DetailesPage page.
+ * Generated class for the SubcatPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-detailes',
-  templateUrl: 'detailes.html',
+  selector: 'page-subcat',
+  templateUrl: 'subcat.html',
 })
-export class DetailesPage {
+export class SubcatPage {
   user: any;
+  items: string[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.user = navParams.data;
-    //console.log(navParams.data);
+    this.items = [];
+    for (var i = 0; i < this.user.length; i++) {
+
+      this.items.push(this.user[i].id);
+    }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailesPage');
+    console.log('ionViewDidLoad SubcatPage');
   }
 
 }

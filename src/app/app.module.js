@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailesPage } from '../pages/detailes/detailes';
+import { SubcatPage } from '../pages/subcat/subcat';
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +24,8 @@ AppModule = __decorate([
         declarations: [
             MyApp,
           HomePage,
-          DetailesPage
+          DetailesPage,
+          SubcatPage
         ],
         imports: [
             BrowserModule,
@@ -32,7 +35,8 @@ AppModule = __decorate([
         entryComponents: [
             MyApp,
           HomePage,
-          DetailesPage
+          DetailesPage,
+          SubcatPage
         ],
         providers: [
             StatusBar,
