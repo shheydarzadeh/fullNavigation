@@ -34,7 +34,7 @@ export class AuthServiceProvider {
         let access = (credentials.password === "pass" && credentials.email === "email");
         this.currentUser = new User('Simon', 'saimon@devdactic.com');
         observer.next(access);
-
+        //observer.next(true);
         observer.complete();
       });
     }
@@ -61,6 +61,7 @@ export class AuthServiceProvider {
       this.currentUser = null;
       observer.next(true);
       observer.complete();
+
     });
   }
 }

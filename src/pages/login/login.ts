@@ -36,19 +36,19 @@ export class LoginPage {
   }
 
   public login() {
-    this.nav.setRoot('MenuPage');
-    //this.showLoading()
-    //this.auth.login(this.registerCredentials).subscribe(allowed => {
-    //  if (allowed) {
-    //    //this.nav.setRoot('HomePage');
-    //    this.nav.setRoot('MenuPage');
-    //  } else {
-    //    this.showError("Access Denied");
-    //  }
-    //},
-    //  error => {
-    //    this.showError(error);
-    //  });
+    //this.nav.setRoot('MenuPage');
+    this.showLoading()
+    this.auth.login(this.registerCredentials).subscribe(allowed => {
+      if (allowed) {
+        //this.nav.setRoot('HomePage');
+        this.nav.setRoot('MenuPage');
+      } else {
+        this.showError("Access Denied");
+      }
+    },
+      error => {
+        this.showError(error);
+      });
   }
 
   showLoading() {
@@ -67,6 +67,6 @@ export class LoginPage {
       subTitle: text,
       buttons: ['OK']
     });
-    alert.present('prompt');
+    alert.present(prompt);
   }
 }
