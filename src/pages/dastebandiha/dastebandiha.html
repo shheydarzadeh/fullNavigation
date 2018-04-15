@@ -20,7 +20,10 @@
   <ion-list>
     <ion-item ion-item *ngFor="let item of items" (click)="nextpage(item)">
       <ion-icon name="{{ item.icon_name }}" item-start></ion-icon>
-      {{ item.title }}
+      <div *ngIf="item.parent_id=='0'">
+        <h2>{{ item.title }}</h2>
+      </div>
+      
       <!--<img src="assets/imgs/chevron-left.png"   item-end ng-click="nextpage()">-->
       <img src="assets/imgs/chevron-left.png" item-end (click)="nextpage(item)">
 

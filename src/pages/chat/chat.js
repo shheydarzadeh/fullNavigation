@@ -8,7 +8,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-service';
 /**
  * Generated class for the ChatPage page.
  *
@@ -16,52 +17,44 @@ import { IonicPage } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 var ChatPage = (function () {
-    //constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //}
-    //ionViewDidLoad() {
-    //  console.log('ionViewDidLoad ChatPage');
-    //}
-    function ChatPage() {
+    function ChatPage(navCtrl, RestapiServiceProvider) {
+        this.navCtrl = navCtrl;
+        this.RestapiServiceProvider = RestapiServiceProvider;
+        // users: object[];
         this.searchQuery = '';
-        this.initializeItems();
+        // items: object[];
+        this.items = [];
+        this.getUsers();
     }
-    ChatPage.prototype.initializeItems = function () {
-        this.items = [
-            {
-                id: 1,
-                title: 'Category 1',
-                items: [
-                    { id: 1, title: 'item 1' },
-                    { id: 2, title: 'item 2' }
-                ]
-            },
-            {
-                id: 2,
-                title: 'Category 2',
-                items: [
-                    { id: 3, title: 'item 3' },
-                    { id: 4, title: 'item 4' }
-                ]
-            },
-            {
-                id: 3,
-                title: 'Category 3',
-                items: [
-                    { id: 5, title: 'item 5' },
-                    { id: 6, title: 'item 6' }
-                ]
+    ChatPage.prototype.getUsers = function () {
+        var _this = this;
+        this.RestapiServiceProvider.getUsers()
+            .then(function (data) {
+            // this.users = JSON.stringify(data[0]);
+            _this.users = data;
+            //this.items = data[0].name;
+            //this.items = JSON.parse(this.users);
+            _this.items = [];
+            for (var i = 0; i < _this.users.length; i++) {
+                _this.items.push(_this.users[i].name);
             }
-        ];
-        //this.items = [
-        //  'Amsterdam',
-        //  'Bogota',
-        //  'Boenus Aires',
-        //  'Cairo',
-        //  'Dhaka',
-        //  'Geneva',
-        //  'Genoa',
-        //  'Hanoi',
-        //];
+        });
+    };
+    ChatPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        //getUsers();
+        this.items = [];
+        for (var i = 0; i < this.users.length; i++) {
+            this.items.push(this.users[i].name);
+        }
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.items = this.items.filter(function (item) {
+                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
     };
     return ChatPage;
 }());
@@ -69,9 +62,9 @@ ChatPage = __decorate([
     IonicPage(),
     Component({
         selector: 'page-chat',
-        templateUrl: 'chat.html',
+        templateUrl: 'chat.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [NavController, RestapiServiceProvider])
 ], ChatPage);
 export { ChatPage };
 //# sourceMappingURL=chat.js.map

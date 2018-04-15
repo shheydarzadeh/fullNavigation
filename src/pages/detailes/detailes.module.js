@@ -6,21 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { ChatPage } from './chat';
-var ChatPageModule = (function () {
-    function ChatPageModule() {
+import { DetailesPage } from './detailes';
+var DetailesPageModule = (function () {
+    function DetailesPageModule() {
     }
-    return ChatPageModule;
+    return DetailesPageModule;
 }());
-ChatPageModule = __decorate([
+DetailesPageModule = __decorate([
     NgModule({
         declarations: [
-            ChatPage,
+            DetailesPage,
         ],
         imports: [
-            IonicPageModule.forChild(ChatPage),
+            IonicPageModule.forChild(DetailesPage),
         ],
     })
-], ChatPageModule);
-export { ChatPageModule };
-//# sourceMappingURL=chat.module.js.map
+], DetailesPageModule);
+export { DetailesPageModule };
+//# sourceMappingURL=detailes.module.js.map

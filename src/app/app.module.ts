@@ -12,6 +12,7 @@ import { DetailesPage } from '../pages/detailes/detailes';
 import { SubcatPage } from '../pages/subcat/subcat';
 
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestapiServiceProvider 
+    RestapiServiceProvider,
+    AuthServiceProvider 
  
   ]
 })

@@ -9,65 +9,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 //import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { NavController, AlertController, LoadingController, IonicPage } from 'ionic-angular';
+import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the RegisterPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var LoginPage = (function () {
-    function LoginPage(nav, auth, alertCtrl, loadingCtrl) {
+var RegisterPage = (function () {
+    function RegisterPage(nav, auth, alertCtrl) {
         this.nav = nav;
         this.auth = auth;
         this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
+        this.createSuccess = false;
         this.registerCredentials = { email: '', password: '' };
     }
-    LoginPage.prototype.createAccount = function () {
-        this.nav.push('RegisterPage');
-    };
-    LoginPage.prototype.login = function () {
+    RegisterPage.prototype.register = function () {
         var _this = this;
-        this.showLoading();
-        this.auth.login(this.registerCredentials).subscribe(function (allowed) {
-            if (allowed) {
-                //this.nav.setRoot('HomePage');
-                _this.nav.setRoot('MenuPage');
+        this.auth.register(this.registerCredentials).subscribe(function (success) {
+            if (success) {
+                _this.createSuccess = true;
+                _this.showPopup("Success", "Account created.");
             }
             else {
-                _this.showError("Access Denied");
+                _this.showPopup("Error", "Problem creating account.");
             }
         }, function (error) {
-            _this.showError(error);
+            _this.showPopup("Error", error);
         });
     };
-    LoginPage.prototype.showLoading = function () {
-        this.loading = this.loadingCtrl.create({
-            content: 'Please wait...',
-            dismissOnPageChange: true
-        });
-        this.loading.present();
-    };
-    LoginPage.prototype.showError = function (text) {
-        this.loading.dismiss();
+    RegisterPage.prototype.showPopup = function (title, text) {
+        var _this = this;
         var alert = this.alertCtrl.create({
-            title: 'Fail',
+            title: title,
             subTitle: text,
-            buttons: ['OK']
+            buttons: [
+                {
+                    text: 'OK',
+                    handler: function (data) {
+                        if (_this.createSuccess) {
+                            _this.nav.popToRoot();
+                        }
+                    }
+                }
+            ]
         });
-        alert.present(prompt);
+        alert.present();
     };
-    return LoginPage;
+    return RegisterPage;
 }());
-LoginPage = __decorate([
+RegisterPage = __decorate([
     IonicPage(),
     Component({
-        selector: 'page-login',
-        templateUrl: 'login.html',
+        selector: 'page-register',
+        templateUrl: 'register.html',
     }),
-    __metadata("design:paramtypes", [NavController, AuthServiceProvider, AlertController, LoadingController])
-], LoginPage);
-export { LoginPage };
-//# sourceMappingURL=login.js.map
+    __metadata("design:paramtypes", [NavController, AuthServiceProvider, AlertController])
+], RegisterPage);
+export { RegisterPage };
+//# sourceMappingURL=register.js.map

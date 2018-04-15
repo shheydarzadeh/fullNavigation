@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SubcatPage } from '../subcat/subcat';
 /**
  * Generated class for the DastebandihaPage page.
  *
@@ -16,12 +17,47 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 var DastebandihaPage = (function () {
+    //constructor(public navCtrl: NavController, public navParams: NavParams) {
+    //}
     function DastebandihaPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.initializeItems();
     }
-    DastebandihaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DastebandihaPage');
+    DastebandihaPage.prototype.initializeItems = function () {
+        this.items = [
+            {
+                id: 1,
+                icon_name: 'star',
+                title: 'املاک',
+                items: [
+                    { id: 1, title: 'خرید املاک', items: [{ id: 1, title: 'خرید آپارتمان' }, { id: 2, title: 'خرید ویلا' }] },
+                    { id: 2, title: 'فروش املاک', items: [{ id: 1, title: 'فروش آپارتمان' }, { id: 2, title: 'فروش ویلا' }] }
+                ]
+            },
+            {
+                id: 2,
+                icon_name: 'car',
+                title: 'وسایل نقلیه',
+                items: [
+                    { id: 3, title: 'خرید وسایل نقلیه' },
+                    { id: 4, title: 'فروش وسایل نقلیه' }
+                ]
+            },
+            {
+                id: 3,
+                title: 'وسایل شخصی',
+                icon_name: 'watch',
+                items: [
+                    { id: 5, title: 'خرید وسایل شخصی' },
+                    { id: 6, title: 'فروش وسایل شخصی' }
+                ]
+            }
+        ];
+    };
+    DastebandihaPage.prototype.nextpage = function (it) {
+        alert('Clicked: ');
+        this.navCtrl.push(SubcatPage, it);
     };
     return DastebandihaPage;
 }());

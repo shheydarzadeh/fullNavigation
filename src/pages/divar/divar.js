@@ -8,7 +8,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { DetailesPage } from '../detailes/detailes';
 /**
  * Generated class for the DivarPage page.
  *
@@ -21,36 +22,31 @@ var DivarPage = (function () {
     //ionViewDidLoad() {
     //  console.log('ionViewDidLoad DivarPage');
     //}
-    function DivarPage() {
+    function DivarPage(navCtrl) {
+        this.navCtrl = navCtrl;
         this.initializeItems();
     }
     DivarPage.prototype.initializeItems = function () {
         this.items = [
             {
                 id: 1,
-                title: 'Category 1',
-                items: [
-                    { id: 1, title: 'item 1' },
-                    { id: 2, title: 'item 2' }
-                ]
+                title: 'لیر',
+                price: '1.290 تومان',
+                photo: 'img/thumbnail-totoro.png'
             },
             {
                 id: 2,
-                title: 'Category 2',
-                items: [
-                    { id: 3, title: 'item 3' },
-                    { id: 4, title: 'item 4' }
-                ]
+                title: 'برج باغ الهیه',
+                price: 'قیمت کل:توافقی',
+                photo: 'img/thumbnail-totoro.png'
             },
-            {
-                id: 3,
-                title: 'Category 3',
-                items: [
-                    { id: 5, title: 'item 5' },
-                    { id: 6, title: 'item 6' }
-                ]
-            }
         ];
+    };
+    DivarPage.prototype.doLogin = function (it) {
+        alert('Clicked: ' + it.id);
+        this.navCtrl.push(DetailesPage, it);
+        // this.navCtrl.push(DetailesPage);
+        // this.navCtrl.push(DastebandihaPage, it);
     };
     return DivarPage;
 }());
@@ -60,7 +56,7 @@ DivarPage = __decorate([
         selector: 'page-divar',
         templateUrl: 'divar.html',
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [NavController])
 ], DivarPage);
 export { DivarPage };
 //# sourceMappingURL=divar.js.map
