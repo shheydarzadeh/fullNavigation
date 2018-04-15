@@ -32,6 +32,8 @@ export class AuthServiceProvider {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
         let access = (credentials.password === "pass" && credentials.email === "email");
+        if (access)
+        { localStorage.setItem('token', "ttttttoken");}
         this.currentUser = new User('Simon', 'saimon@devdactic.com');
         observer.next(access);
         //observer.next(true);

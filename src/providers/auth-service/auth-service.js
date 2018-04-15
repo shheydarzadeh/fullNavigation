@@ -36,8 +36,12 @@ var AuthServiceProvider = (function () {
             return Observable.create(function (observer) {
                 // At this point make a request to your backend to make a real check!
                 var access = (credentials.password === "pass" && credentials.email === "email");
+                if (access) {
+                    localStorage.setItem('token', "ttttttoken");
+                }
                 _this.currentUser = new User('Simon', 'saimon@devdactic.com');
                 observer.next(access);
+                //observer.next(true);
                 observer.complete();
             });
         }

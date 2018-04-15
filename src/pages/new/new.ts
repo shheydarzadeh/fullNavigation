@@ -16,6 +16,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class NewPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    localStorage.clear();
+    alert("done");
   }
 
   ionViewDidLoad() {

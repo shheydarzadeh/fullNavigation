@@ -19,6 +19,8 @@ var NewPage = (function () {
     function NewPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        localStorage.clear();
+        alert("done");
     }
     NewPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad NewPage');

@@ -20,6 +20,14 @@ export class DastebandihaPage {
   //constructor(public navCtrl: NavController, public navParams: NavParams) {
   //}
   constructor(private navCtrl: NavController, public navParams: NavParams) {
+    //if (localStorage.getItem('token') == "ttttttoken")
+    //{
+    //  alert("ok");
+    //  //this.nav.setRoot('MenuPage');
+    //}
+    //else {
+    //  alert("nok");
+    //}
     this.initializeItems();
   }
   initializeItems() {
@@ -54,8 +62,8 @@ export class DastebandihaPage {
     //  }
     //];
     this.items = [
-      { "title": "A", "id": 1, "parent_id": 0 },
-      { "title": "B", "id": 2, "parent_id": 0 },
+      { "title": "A", "id": 1, "parent_id": 0, icon_name: 'star',},
+      { "title": "B", "id": 2, "parent_id": 0, icon_name: 'car',},
       { "title": "A1", "id": 3, "parent_id": 1 },
       { "title": "A2", "id": 4, "parent_id": 1 },
       { "title": "B1", "id": 5, "parent_id": 2 },

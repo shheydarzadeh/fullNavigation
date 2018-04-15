@@ -24,11 +24,21 @@ var LoginPage = (function () {
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
         this.registerCredentials = { email: '', password: '' };
+        if (localStorage.getItem('token') == "ttttttoken") {
+            alert(localStorage.getItem('token'));
+            alert("ok");
+            this.nav.setRoot('MenuPage');
+        }
+        else {
+            alert(localStorage.getItem('token'));
+            alert("nok");
+        }
     }
     LoginPage.prototype.createAccount = function () {
         this.nav.push('RegisterPage');
     };
     LoginPage.prototype.login = function () {
+        //this.nav.setRoot('MenuPage');
         var _this = this;
         this.showLoading();
         this.auth.login(this.registerCredentials).subscribe(function (allowed) {

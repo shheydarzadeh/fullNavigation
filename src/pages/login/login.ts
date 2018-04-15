@@ -28,7 +28,21 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = { email: '', password: '' };
 
-  constructor(private nav: NavController, private auth: AuthServiceProvider, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
+  constructor(private nav: NavController, private auth: AuthServiceProvider, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+    if (localStorage.getItem('token') == "ttttttoken")
+    {
+
+      alert(localStorage.getItem('token'));
+      alert("ok");
+      this.nav.setRoot('MenuPage');
+    }
+    else {
+      alert(localStorage.getItem('token'));
+
+      alert("nok");
+    }
+
+  }
 
   public createAccount() {
     this.nav.push('RegisterPage');
@@ -37,19 +51,23 @@ export class LoginPage {
 
   public login() {
     //this.nav.setRoot('MenuPage');
-    this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {
-        //this.nav.setRoot('HomePage');
-        this.nav.setRoot('MenuPage');
-      } else {
-        this.showError("Access Denied");
-      }
-    },
-      error => {
-        this.showError(error);
-      });
+    
+
+      this.showLoading()
+      this.auth.login(this.registerCredentials).subscribe(allowed => {
+        if (allowed) {
+          //this.nav.setRoot('HomePage');
+          this.nav.setRoot('MenuPage');
+        } else {
+          this.showError("Access Denied");
+        }
+      },
+        error => {
+          this.showError(error);
+        });
   }
+   
+  
 
   showLoading() {
     this.loading = this.loadingCtrl.create({
