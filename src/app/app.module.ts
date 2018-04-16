@@ -14,6 +14,7 @@ import { SubPage } from '../pages/sub/sub';
 
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { SampleModalPage } from '../pages/sample-modal/sample-modal';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     DetailesPage,
     SubcatPage,
-    SubPage
+    SubPage,
+    SampleModalPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     DetailesPage,
     SubcatPage,
-    SubPage
+    SubPage,
+    SampleModalPage
   ],
   providers: [
     StatusBar,
