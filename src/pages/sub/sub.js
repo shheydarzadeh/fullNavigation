@@ -9,40 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SubPage } from '../sub/sub';
 /**
- * Generated class for the SubcatPage page.
+ * Generated class for the SubPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SubcatPage = (function () {
-    function SubcatPage(navCtrl, navParams) {
+var SubPage = (function () {
+    function SubPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.items = [];
         this.user = navParams.data;
-        this.items = [];
-        for (var i = 0; i < this.user.length; i++) {
-            this.items.push(this.user[i].id);
-        }
     }
-    SubcatPage.prototype.nextpage = function (it) {
-        alert('Clicked: ');
-        this.navCtrl.push(SubPage, it);
+    SubPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SubPage');
     };
-    SubcatPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SubcatPage');
-    };
-    return SubcatPage;
+    return SubPage;
 }());
-SubcatPage = __decorate([
+SubPage = __decorate([
     IonicPage(),
     Component({
-        selector: 'page-subcat',
-        templateUrl: 'subcat.html',
+        selector: 'page-sub',
+        templateUrl: 'sub.html',
     }),
     __metadata("design:paramtypes", [NavController, NavParams])
-], SubcatPage);
-export { SubcatPage };
-//# sourceMappingURL=subcat.js.map
+], SubPage);
+export { SubPage };
+//# sourceMappingURL=sub.js.map

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SubPage } from '../sub/sub';
 /**
  * Generated class for the SubcatPage page.
  *
@@ -25,6 +25,10 @@ export class SubcatPage {
     }
   }
 
+  nextpage(it) {
+    alert('Clicked: ');
+    this.navCtrl.push(SubPage, it);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SubcatPage');
   }

@@ -5,33 +5,29 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{user.category}}</ion-title>
+    <ion-title>{{user.subcategory}}</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-list>
     <!--<ion-item *ngFor="let item of cat">
-    {{user.title}}
-  </ion-item>-->
+      {{user.title}}
+    </ion-item>-->
     <!--<ion-item *ngFor="let user of users">
-    {{user.title}}
-  </ion-item>-->
+      {{user.title}}
+    </ion-item>-->
     <!--<ion-item *ngFor="let item of items">
-    {{ item }}
-  </ion-item>-->
-    <ion-item *ngFor="let s of user.subs" (click)="nextpage(s)">
-      {{s.subcategory}}
-      <img src="assets/imgs/chevron-left.png" item-end (click)="nextpage(s)">
+      {{ item }}
+    </ion-item>-->
+    <ion-item *ngFor="let s of user.manufactures" >
+      {{s.manufacture}}
       <!--<ion-list>
     <ion-item *ngFor="let m of s.manufactures" text-wrap>
       {{m.manufacture}}
     </ion-item>
   </ion-list>-->
     </ion-item>
-    </ion-list>
+  </ion-list>
 </ion-content>

@@ -62,13 +62,130 @@ var DastebandihaPage = (function () {
         //    ]
         //  }
         //];
+        //this.items = [
+        //  { "title": "A", "id": 1, "parent_id": 0, icon_name: 'star',},
+        //  { "title": "B", "id": 2, "parent_id": 0, icon_name: 'car',},
+        //  { "title": "A1", "id": 3, "parent_id": 1 },
+        //  { "title": "A2", "id": 4, "parent_id": 1 },
+        //  { "title": "B1", "id": 5, "parent_id": 2 },
+        //  { "title": "B2", "id": 6, "parent_id": 2 },];
         this.items = [
-            { "title": "A", "id": 1, "parent_id": 0, icon_name: 'star', },
-            { "title": "B", "id": 2, "parent_id": 0, icon_name: 'car', },
-            { "title": "A1", "id": 3, "parent_id": 1 },
-            { "title": "A2", "id": 4, "parent_id": 1 },
-            { "title": "B1", "id": 5, "parent_id": 2 },
-            { "title": "B2", "id": 6, "parent_id": 2 },
+            {
+                "category": "PC",
+                "subs": [
+                    {
+                        "subcategory": "Processor",
+                        "manufactures": [
+                            {
+                                "manufacture": "Intel"
+                            },
+                            {
+                                "manufacture": "AMD"
+                            }
+                        ]
+                    },
+                    {
+                        "subcategory": "Motherboard",
+                        "manufactures": [
+                            {
+                                "manufacture": "Asus"
+                            },
+                            {
+                                "manufacture": "AMD"
+                            },
+                            {
+                                "manufacture": "GigaByte"
+                            },
+                            {
+                                "manufacture": "Intel"
+                            }
+                        ]
+                    },
+                    {
+                        "subcategory": "Memory",
+                        "manufactures": [
+                            {
+                                "manufacture": "Visipro"
+                            },
+                            {
+                                "manufacture": "Crucial"
+                            },
+                            {
+                                "manufacture": "VenomRX"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "Laptop",
+                "subs": [
+                    {
+                        "subcategory": "Notebook",
+                        "manufactures": [
+                            {
+                                "manufacture": "Lenovo"
+                            },
+                            {
+                                "manufacture": "Dell"
+                            }
+                        ]
+                    },
+                    {
+                        "subcategory": "Netbook",
+                        "manufactures": [
+                            {
+                                "manufacture": "Lenovo"
+                            },
+                            {
+                                "manufacture": "Dell"
+                            },
+                            {
+                                "manufacture": "Acer"
+                            },
+                            {
+                                "manufacture": "HP"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "Printer",
+                "subs": [
+                    {
+                        "subcategory": "Laserjet",
+                        "manufactures": [
+                            {
+                                "manufacture": "HP"
+                            },
+                            {
+                                "manufacture": "Brother"
+                            },
+                            {
+                                "manufacture": "Canon"
+                            },
+                            {
+                                "manufacture": "Samsung"
+                            }
+                        ]
+                    },
+                    {
+                        "subcategory": "Deskjet",
+                        "manufactures": [
+                            {
+                                "manufacture": "HP"
+                            },
+                            {
+                                "manufacture": "Canon"
+                            },
+                            {
+                                "manufacture": "Epson"
+                            }
+                        ]
+                    }
+                ]
+            }
         ];
     };
     DastebandihaPage.prototype.nextpage = function (it) {

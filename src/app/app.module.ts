@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailesPage } from '../pages/detailes/detailes';
 import { SubcatPage } from '../pages/subcat/subcat';
+import { SubPage } from '../pages/sub/sub';
 
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -19,7 +20,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     DetailesPage,
-    SubcatPage
+    SubcatPage,
+    SubPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     DetailesPage,
-    SubcatPage
+    SubcatPage,
+    SubPage
   ],
   providers: [
     StatusBar,
