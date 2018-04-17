@@ -8,42 +8,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { SampleModalPage } from '../sample-modal/sample-modal';
+import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 /**
- * Generated class for the NewPage page.
+ * Generated class for the SampleModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var NewPage = (function () {
-    function NewPage(navCtrl, navParams, modalCtrl) {
-        this.navCtrl = navCtrl;
+var SampleModalPage = (function () {
+    function SampleModalPage(navParams, viewCtrl) {
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
-        localStorage.clear();
-        alert("done");
-        this.openModal();
+        this.viewCtrl = viewCtrl;
+        this.email = this.navParams.get('email');
     }
-    NewPage.prototype.openModal = function () {
-        var myModal = this.modalCtrl.create(SampleModalPage);
-        //myModal.onDidDismiss(data => {
-        //  this.userName = data.userName;
-        //});
-        myModal.present();
+    SampleModalPage.prototype.closeModal = function () {
+        //this.viewCtrl.dismiss(userProvidedData);
+        this.viewCtrl.dismiss();
     };
-    NewPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad NewPage');
+    SampleModalPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SampleModalPage');
     };
-    return NewPage;
+    return SampleModalPage;
 }());
-NewPage = __decorate([
+SampleModalPage = __decorate([
     IonicPage(),
     Component({
-        selector: 'page-new',
-        templateUrl: 'new.html',
+        selector: 'page-sample-modal',
+        templateUrl: 'sample-modal.html',
     }),
-    __metadata("design:paramtypes", [NavController, NavParams, ModalController])
-], NewPage);
-export { NewPage };
-//# sourceMappingURL=new.js.map
+    __metadata("design:paramtypes", [NavParams, ViewController])
+], SampleModalPage);
+export { SampleModalPage };
+//# sourceMappingURL=sample-modal.js.map

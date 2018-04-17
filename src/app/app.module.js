@@ -17,6 +17,7 @@ import { SubcatPage } from '../pages/subcat/subcat';
 import { SubPage } from '../pages/sub/sub';
 import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { SampleModalPage } from '../pages/sample-modal/sample-modal';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +30,8 @@ AppModule = __decorate([
             HomePage,
             DetailesPage,
             SubcatPage,
-            SubPage
+            SubPage,
+            SampleModalPage
         ],
         imports: [
             BrowserModule,
@@ -42,7 +44,8 @@ AppModule = __decorate([
             HomePage,
             DetailesPage,
             SubcatPage,
-            SubPage
+            SubPage,
+            SampleModalPage
         ],
         providers: [
             StatusBar,

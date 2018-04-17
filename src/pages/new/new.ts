@@ -24,9 +24,9 @@ export class NewPage {
   openModal() {
     let myModal = this.modalCtrl.create(SampleModalPage);
 
-    myModal.onDidDismiss(data => {
-      this.userName = data.userName;
-    });
+    //myModal.onDidDismiss(data => {
+    //  this.userName = data.userName;
+    //});
 
     myModal.present();
   }
